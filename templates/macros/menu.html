@@ -31,9 +31,18 @@
         {%- set abs_item_url = get_url(path=item.url) -%}
         {%- set is_current = current_url == abs_item_url ~ "/" or current_url is starting_with(abs_item_url) -%}
         {%- set is_base = abs_item_url == config.base_url or abs_item_url == config.base_url ~ "/" -%}
+        {%- set is_external = item.url is starting_with("https://") or item.url is starting_with("http://") -%}
+
+        {%- if is_external -%}
+            {%- set abs_item_url = item.url -%}
+        {%- endif -%}
 
         <li {%- if is_current and not is_base %} class="active" {%- endif %}>
-            <a href="{{ get_url(path=item.url) }}">{{ item.name }}</a>
+            {%- if item.blank -%}
+                <a href="{{ abs_item_url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a>
+            {%- else -%}
+                <a href="{{ abs_item_url }}">{{ item.name }}</a>
+            {%- endif -%}
         </li>
     {%- endfor-%}
 {% endmacro items %}
