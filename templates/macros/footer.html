@@ -1,12 +1,17 @@
 {% macro copyright() %}
-    {%- if config.extra.copyright -%}
-        <div class="copyright copyright--user">{{ config.extra.copyright | safe }}</div>
+    {%- if config.extra.center -%}
+        {%- set copyright_class = "copyright copyright--center" -%}
     {%- else -%}
-        <div class="copyright">
-            <span>© {{ now() | date(format="%Y") }} <a href="https://github.com/ejmg/zerm">zerm</a> :: Powered by <a href="https://www.getzola.org/">Zola</a></span>
-            <span>:: Theme made by <a href="https://github.com/ejmg">ejmg</a></span>
-        </div>
+        {%- set copyright_class = "copyright" -%}
     {%- endif -%}
+    <div class="{{ copyright_class }}">
+        {%- if config.extra.copyright -%}
+            {{ config.extra.copyright | safe }}
+        {%- else -%}
+            <span>{{ config.extra.copyright_glyph }} {{ now() | date(format="%Y") }} {{ config.extra.copyright_author | safe }}</span>
+            <span>{{ config.extra.sep }} {{ config.extra.copyright_statement | safe }}</span>
+        {%- endif -%}
+    </div>
 {% endmacro copyright %}
 
 {% macro script() %}

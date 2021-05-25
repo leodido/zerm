@@ -35,7 +35,7 @@ highlight_theme = "axar" # Other dark themes that work: "1337", "agola-dark",
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
-# Built in taxonomies of zerm. 
+# Built in taxonomies of zerm.
 taxonomies = [
            {name = "tags"},
            {name = "categories"},
@@ -46,6 +46,9 @@ taxonomies = [
 #
 # Many configurations are taken directly from Terminal's config.toml
 # ---------------------------------------------------------
+
+# Separator
+sep = "::"
 
 # Author name to be added to posts, if enabled.
 author = "you!"
@@ -87,8 +90,19 @@ center = false
 # Must be placed in root of static/ directory...
 # og_preview_img = ""
 
-# Copyright notice if desired. Defaults to 
+# Custom copyright line if desired.
 # copyright = "copyright notice here"
+
+# Custom copyright glyph
+copyright_glyph = "©"
+
+# Custom copyright author
+copyright_author = '<a href="https://twitter.com/leodido">leodido</a>'
+
+# Custom copyright statement
+copyright_statement = "Made with ⌨ "
+
+# Custom copy
 
 # What is displayed in the top left corner of the website. Default is zerm.
 logo_text = "zerm"
