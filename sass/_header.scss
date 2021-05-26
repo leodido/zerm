@@ -75,7 +75,7 @@
         }
       }
 
-      li {
+      li,a.li {
         &.active {
           color: var(--accent-alpha-70);
         }
@@ -84,6 +84,9 @@
           margin-bottom: 10px;
           flex: 0 0 auto;
         }
+        &.right {
+          margin-left: auto;
+        }
       }
 
       @media (max-width: $phone-max-width) {
@@ -91,9 +94,13 @@
         align-items: flex-start;
         padding: 0;
 
-        li {
+        li,a.li {
           margin: 0;
           padding: 5px;
+
+          &.right {
+            margin-top: 10px;
+          }
         }
       }
     }
@@ -119,7 +126,7 @@
           cursor: pointer;
         }
 
-        li {
+        li,a.li {
           margin: 0;
           padding: 5px;
           white-space: nowrap;
