@@ -53,6 +53,14 @@
         right: 0;
     }
 
+    .default-color span:last-child {
+      display: none;
+    }
+
+    .toggle:not(.default-color) span:first-child {
+      display: none;
+    }
+
     &__inner {
       // @include menu;
       display: flex;
@@ -75,7 +83,7 @@
         }
       }
 
-      li,a.li {
+      li {
         &.active {
           color: var(--accent-alpha-70);
         }
@@ -84,9 +92,6 @@
           margin-bottom: 10px;
           flex: 0 0 auto;
         }
-        &.right {
-          margin-left: auto;
-        }
       }
 
       @media (max-width: $phone-max-width) {
@@ -94,13 +99,9 @@
         align-items: flex-start;
         padding: 0;
 
-        li,a.li {
+        li {
           margin: 0;
           padding: 5px;
-
-          &.right {
-            margin-top: 10px;
-          }
         }
       }
     }
@@ -115,6 +116,10 @@
         margin-left: 20px;
       }
 
+      &.right {
+        margin-left: auto;
+      }
+
       &-more {
         @include menu;
         top: 35px;
@@ -126,7 +131,7 @@
           cursor: pointer;
         }
 
-        li,a.li {
+        li {
           margin: 0;
           padding: 5px;
           white-space: nowrap;
