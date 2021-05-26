@@ -18,10 +18,12 @@
             {% else -%}
                 {{ menu::items(menu=config.extra.main_menu) }}
             {%- endif -%}
+            {{ menu::color_toggle_item() }}
         </ul>
 
         <ul class="menu__inner menu__inner--mobile">
             {{ menu::items(menu=config.extra.main_menu) }}
+            {{ menu::color_toggle_item() }}
         </ul>
     </nav>
 {% endmacro menu %}
@@ -45,4 +47,13 @@
             {%- endif -%}
         </li>
     {%- endfor-%}
+
 {% endmacro items %}
+
+{% macro color_toggle_item() %}
+    {# wrap in a configuration field, always default dark #}
+    {# how to change text? #}
+    {# cursor: pointer ~ resemble button ~ underline? #}
+
+    <a class="li right" id="color-toggle">go light</a>
+{% endmacro color_toggle_item %}
