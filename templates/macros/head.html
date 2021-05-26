@@ -12,8 +12,11 @@
         {% set color = "color/" ~ config.extra.theme_color ~ ".css" -%}
         <link rel="stylesheet" href="{{ get_url(path=color) }}">
     {%- else -%}
-        <link rel="stylesheet" href=" {{ get_url(path="color/orange.css") }}">
+        <link rel="stylesheet" href="{{ get_url(path="color/orange.css") }}">
     {% endif %}
+    {%- if config.extra.color_toggle -%}
+        <link disabled id="invert-color-theme" rel="stylesheet" href="{{ get_url(path="color/invert.css") }}">
+    {%- endif -%}
     {%- if config.extra.custom_css is defined -%}
         <link rel="stylesheet" href="{{ get_url(path="custom.css") }}">
     {% endif %}

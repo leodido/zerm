@@ -47,13 +47,11 @@
             {%- endif -%}
         </li>
     {%- endfor-%}
-
 {% endmacro items %}
 
 {% macro color_toggle_item() %}
-    {# wrap in a configuration field, always default dark #}
-    {# how to change text? #}
-    {# cursor: pointer ~ resemble button ~ underline? #}
-
-    <a class="li right" id="color-toggle">go light</a>
+    {%- if config.extra.color_toggle -%}
+        {# how to change text? #}
+        <a class="li right default-color" href="">go light</a>
+    {%- endif -%}
 {% endmacro color_toggle_item %}

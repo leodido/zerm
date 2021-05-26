@@ -126,3 +126,6 @@ read_more = "read more"
 # not currently used from previous theme, but leaving here for now in case I
 # feel like adding it.
 read_other_posts = "read other posts"
+
+# Toggle to invert the colors
+color_toggle = true
