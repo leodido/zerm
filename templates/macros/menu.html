@@ -18,12 +18,12 @@
             {% else -%}
                 {{ menu::items(menu=config.extra.main_menu) }}
             {%- endif -%}
-            {{ menu::color_toggle_item() }}
+            {{ menu::color_toggle_item(ul=true) }}
         </ul>
 
         <ul class="menu__inner menu__inner--mobile">
             {{ menu::items(menu=config.extra.main_menu) }}
-            {{ menu::color_toggle_item() }}
+            {{ menu::color_toggle_item(ul=false) }}
         </ul>
     </nav>
 {% endmacro menu %}
@@ -49,9 +49,15 @@
     {%- endfor-%}
 {% endmacro items %}
 
-{% macro color_toggle_item() %}
+{% macro color_toggle_item(ul) %}
     {%- if config.extra.color_toggle -%}
-        {# how to change text? #}
-        <a class="li right default-color" href="">go light</a>
+        {%- if ul -%}<ul class="right menu__sub-inner">{%- endif -%}
+            <li>
+                <a class="toggle default-color" href="">
+                    <span>{{ config.extra.color_toggle_default_label | safe }} ☼</span>
+                    <span>{{ config.extra.color_toggle_inverse_label | safe }} ◓</span>
+                </a>
+            </li>
+        {%- if ul -%}</ul>{%- endif -%}
     {%- endif -%}
 {% endmacro color_toggle_item %}

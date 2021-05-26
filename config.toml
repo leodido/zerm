@@ -129,3 +129,9 @@ read_other_posts = "read other posts"
 
 # Toggle to invert the colors
 color_toggle = true
+
+# Label to show when currently using the default color theme
+color_toggle_default_label = "shine"
+
+# Label to show when currently using the inverse color theme
+color_toggle_inverse_label = "night"
