@@ -63,7 +63,7 @@ show_categories = true
 show_tags = true
 
 # Theme color. You can have any color you want, so long as it's...
-# ["orange", "blue", "red", "green", "pink"]
+# ["orange", "blue", "red", "emerald", "green", "pink"]
 theme_color = "orange"
 
 # Custom css to style over the defaults. This is useful when you only have a
@@ -85,7 +85,6 @@ center = false
 # set a custom favicon. Must be placed in root of static/ directory...
 # favicon = ""
 
-
 # Set a custom preview image for your website when posted as a link.
 # Must be placed in root of static/ directory...
 # og_preview_img = ""
@@ -101,8 +100,6 @@ copyright_author = '<a href="https://twitter.com/leodido">leodido</a>'
 
 # Custom copyright statement
 copyright_statement = "Made with ⌨ "
-
-# Custom copy
 
 # What is displayed in the top left corner of the website. Default is zerm.
 logo_text = "zerm"

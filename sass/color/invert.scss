@@ -1,7 +1,0 @@
-html:not(img):not(figure):not(video):not(.color-critical) {
-    filter: invert(100%) hue-rotate(180deg) brightness(105%) contrast(85%);
-}
-
-body * [style*="background-image"] {
-    filter: invert(100%) hue-rotate(180deg) brightness(105%) contrast(85%);
-}
