@@ -1,0 +1,22 @@
+{#
+This is a shortcode with body.
+
+Inputs:
+- lang: string
+- title: string
+- collapse: bool
+
+Note: indentation matters in shortcodes --> do not change it!
+#}
+
+{%- if lang -%}
+{%- set id = nth -%}
+<div class="collapsable-code">
+    <input id="code-{{ id }}" type="checkbox" {%- if collapse -%}checked{%- endif -%} />
+    <label for="code-{{ id }}">
+        <span class="collapsable-code__language">{{ lang }}</span>
+        {%- if title -%}<span class="collapsable-code__title">{{ title }}</span>{%- endif -%}
+        <span class="collapsable-code__toggle" data-label-expand="△" data-label-collapse="▽"></span>
+    </label>{{ body | markdown(inline=true) | safe }}
+</div>
+{%- endif -%}
