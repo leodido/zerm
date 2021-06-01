@@ -7,6 +7,11 @@
 -#}
 
 {% macro styling() %}
+    {# todo > there's a way to load this only in case the page contains a code block? #}
+    {%- if config.extra.highlight_prism -%}
+        {% set prism = "prism/prism.css" -%}
+        <link rel="stylesheet" href="{{ get_url(path=prism) }}">
+    {% endif %}
     <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
     {% if config.extra.theme_color != "orange" -%}
         {% set color = "color/" ~ config.extra.theme_color ~ ".css" -%}

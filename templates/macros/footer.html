@@ -19,4 +19,8 @@
     {%- if config.extra.color_toggle -%}
         <script type="text/javascript" src="{{ get_url(path="assets/js/toggle.js" ) }}"></script>
     {%- endif -%}
+    {# todo > there's a way to load this only in case the page contains a code block? #}
+    {%- if config.extra.highlight_prism -%}
+        <script type="text/javascript" src="{{ get_url(path="assets/js/prism.js" ) }}"></script>
+    {% endif %}
 {% endmacro script %}
